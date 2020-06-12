@@ -1,4 +1,4 @@
-# modVv.vcync.gl
+# modv.vcync.gl
 
 modV's website and documentation.
 
