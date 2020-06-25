@@ -18,5 +18,3 @@ deploy:
   keep-history: true
   target-branch: gh-pages
   fqdn: modv.js.org
-  on:
-    branch: main
