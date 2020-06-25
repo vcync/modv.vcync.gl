@@ -18,3 +18,5 @@ deploy:
   keep-history: true
   target-branch: gh-pages
   fqdn: modv.vcync.gl
+  on:
+    all_branches: true
