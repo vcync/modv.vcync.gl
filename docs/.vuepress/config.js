@@ -16,8 +16,9 @@ module.exports = {
         ]
       }
     ],
+
     sidebar: {
-      '/v3/': [
+      '/v3/guide/': [
         {
           title: 'Guide',
           path: '/v3/guide/',
@@ -27,7 +28,30 @@ module.exports = {
             '/v3/guide/modules',
             '/v3/guide/audioReactivity',
             '/v3/guide/inputLinks',
+            '/v3/guide/shortcuts',
             '/v3/guide/writingA2dModule',
+          ],
+        },
+
+        {
+          title: 'Development',
+          path: '/v3/development/'
+        }
+      ],
+
+
+      '/v3/development/': [
+        {
+          title: 'Guide',
+          path: '/v3/guide/'
+        },
+        {
+          title: 'Development',
+          path: '/v3/development/',
+          collapsable: false,
+          children: [
+            '/v3/development/',
+            '/v3/development/directives',
           ],
         },
       ],
