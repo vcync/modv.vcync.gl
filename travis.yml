@@ -19,4 +19,4 @@ deploy:
   target-branch: gh-pages
   fqdn: modv.js.org
   on:
-    branch: feat/documentation
+    branch: main
