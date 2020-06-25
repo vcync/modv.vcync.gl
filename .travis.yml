@@ -17,6 +17,6 @@ deploy:
   repo: vcync/modv.vcync.gl
   keep-history: true
   target-branch: gh-pages
-  fqdn: modv.js.org
+  fqdn: modv.vcync.gl
   on:
     branch: main
