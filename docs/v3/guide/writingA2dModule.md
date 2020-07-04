@@ -4,7 +4,7 @@ sidebarDepth: 2
 
 # Writing a 2D Module
 
-We're going to write a Module which works with the built-in `2d` Renderer.
+We're going to write a Module which works with the built-in 2D Renderer.
 
 To follow this guide, we'd recommend having some experience with:
 * JavaScript (ES6+)
@@ -13,9 +13,17 @@ To follow this guide, we'd recommend having some experience with:
 
 ## 1. Create a new file
 
-Save a blank JavaScript file in the [Media Manager's media directory](/guide/mediaManager.html#media-folder). Place your file in a `module` folder within a Project folder. e.g. `[media path]/[project]/module`.
+Save a blank JavaScript file in modV's media directory. Place your file in a `module` folder within a Project folder. e.g. `[media path]/[project]/module`.
 
-By saving your Module here the Media Manager will compile your code and send it to modV on every file save. If your Module is within a Layer already, you'll need to remove it from said Layer and drag your Module in again from the Gallery to use the updated Module.
+::: tip Media Path
+The media directory's location is different per operating system.
+
+* macOS `~/Library/Application Support/modV/media/`
+* Windows `%appdata%\modV\media\`
+* Linux `~/.config/modV/media/`
+:::
+
+By saving your Module here modV will compile your code and send it to modV on every file save. If your Module is within a Group already, you'll need to remove it from said Group and drag your Module in again from the Gallery to use the updated Module.
 
 ## 2. Export an Object
 
@@ -30,12 +38,12 @@ export default {
 ## 3. Set up the Meta
 
 Next up, we'll need to describe our Module with a meta Object block.
-Let's define the Module type as `2d` and give our Module a name.
+Let's define the Module type as 2D and give our Module a name.
 
 ```JavaScript
 export default {
   meta: {
-    // this tells modV our Module should use the 2d renderer
+    // this tells modV our Module should use the 2D renderer
     type: '2d',
 
     // our Module's name
@@ -46,7 +54,7 @@ export default {
 
 ## 4. Draw
 
-The draw function is where we put our Canvas2D code in `2d` Modules.
+The draw function is where we put our Canvas2D code in 2D Modules.
 
 The code below will draw a filled red circle in the middle of the screen.
 
@@ -117,18 +125,22 @@ props: {
 
 Now we have our props defined, we'll need to edit our draw function.
 
-Props get written to the Module's scope, so you can access any prop with `this[prop]`.
+Props are accessed from the destructured argument's `props` key, so you can access any prop value with `props[prop]`.
 
-In our case it'll be `this.size` and `this.color`.
+In our case it'll be `props.size` and `props.color`.
+
+::: tip Updated in 3.0+
+Props are now accessed from the destructured argument's `props` key instead of through the module's scope.
+:::
 
 ```JavaScript
 export default {
   // meta: { ... },
   // props: { ... },
 
-  draw({ canvas: { width, height }, context }) {
+  draw({ canvas: { width, height }, context, props }) {
     // we can access our props through destructuring
-    const { color, size } = this;
+    const { color, size } = props;
 
     context.fillStyle = color;
     context.beginPath();
@@ -170,8 +182,8 @@ export default {
     },
   },
 
-  draw({ canvas: { width, height }, context }) {
-    const { color, size } = this;
+  draw({ canvas: { width, height }, context, props }) {
+    const { color, size } = props;
 
     context.fillStyle = color;
     context.beginPath();
@@ -188,7 +200,10 @@ export default {
 ```
 
 :::tip Adding audio reactivity
-Right click on your Module's `size` control - through the menu, you can attach audio "features" to the size of the circle. This makes any Module audio reactive without baking in features.
+Select the `size` prop in the module inspector. Create an Input Link in the Input config panel to an audio feature.
+The control will now be automated.
 :::
 
-So now we have a pretty bare-bones 2d Module, but that's enough to get you started.
+So now we have a pretty bare-bones 2D Module, but that's enough to get you started.
+
+For examples of more complex module, including using `data`, `init`, `resize` and `update` see the [Ball module](https://github.com/vcync/modV/blob/main/src/application/sample-modules/Ball.js).
