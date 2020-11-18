@@ -26,6 +26,7 @@ module.exports = {
           children: [
             '/v3/guide/',
             '/v3/guide/modules',
+            '/v3/guide/groups',
             '/v3/guide/audioReactivity',
             '/v3/guide/inputLinks',
             '/v3/guide/shortcuts',
