@@ -17,7 +17,7 @@ modV takes a slightly different approach to offer the user more advanced audio a
 ## What is an Audio Feature?
 
 > Often, observing and analysing an audio signal as a waveform doesn’t provide us a lot of information about its contents. An audio feature is a measurement of a particular characteristic of an audio signal, and it gives us insight into what the signal contains.
-> 
+>
 > Audio features can be measured by running an algorithm on an audio signal that will return a number, or a set of numbers that quantify the characteristic that the specific algorithm is intended to measure. Meyda implements a selection of standardized audio features that are used widely across a variety of music computing scenarios.
 
 (taken from the Meyda website)
@@ -26,6 +26,6 @@ modV takes a slightly different approach to offer the user more advanced audio a
 
 ## How to use Audio Features
 
-To use an Audio Feature with a modV Module, please see [Input Links](./inputLinks.html).
+To use an Audio Feature with a modV [Module](./modules.md), please see [Input Links](./inputLinks.md).
 
-For information on how to use Audio Features in developing a modV Module, please see [Writing a 2D Module](./writingA2dModule.html).
+For information on how to use Audio Features in developing a modV Module, please see [Writing a 2D Module](./writingA2dModule.md).

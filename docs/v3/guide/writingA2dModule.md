@@ -84,7 +84,7 @@ export default {
 
 ## 5. Props
 
-So, a red circle is pretty cool, but how is this audio reactive?
+A red circle is pretty cool, but how is this audio reactive?
 Well, we should define some props (properties) to generate some Controls.
 
 We've got two variables defined at the moment, `size` and `color`. Let's take these out of the draw function and create some props.
@@ -123,11 +123,11 @@ props: {
 
 ### 5.3 slight edit to `draw()`
 
-Now we have our props defined, we'll need to edit our draw function.
+Now we have our props defined we'll need to edit our draw function.
 
 Props are accessed from the destructured argument's `props` key, so you can access any prop value with `props[prop]`.
 
-In our case it'll be `props.size` and `props.color`.
+In our case it will be `props.size` and `props.color`.
 
 ::: tip Updated in 3.0+
 Props are now accessed from the destructured argument's `props` key instead of through the module's scope.
