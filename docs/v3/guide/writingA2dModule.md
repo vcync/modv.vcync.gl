@@ -23,7 +23,7 @@ The media directory's location is different per operating system.
 * Linux `~/.config/modV/media/`
 :::
 
-By saving your Module here modV will compile your code and send it to modV on every file save. If your Module is within a Group already, you'll need to remove it from said Group and drag your Module in again from the Gallery to use the updated Module.
+By saving your Module here modV will compile your code and send it to modV on every file save. If your Module is within a Group your new code will run automatically, preserving the Module's props.
 
 ## 2. Export an Object
 
