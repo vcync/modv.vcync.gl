@@ -1,12 +1,12 @@
 const state = {
   workshops: [
-    // {
-    //   title: "CODAME ART+TECH Festival",
-    //   location: "Online",
-    //   url: "https://codame.com/events/modular-audio-visualisation-with-modv",
-    //   date_start: new Date("12/16/2020 11:30 PST"),
-    //   date_end: new Date("12/16/2020 14:00 PST")
-    // },
+    {
+      title: "CODAME ART+TECH Festival",
+      location: "Online",
+      url: "https://codame.com/events/modular-audio-visualisation-with-modv",
+      date_start: new Date("12/16/2020 11:30 PST"),
+      date_end: new Date("12/16/2020 14:00 PST")
+    },
 
     {
       title: "Visual & Light Workshop @ Dunarnia",
