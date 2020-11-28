@@ -4,13 +4,13 @@ sidebarDepth: 2
 
 # Media
 
-## Media Manager
+## Supported Media
 
-Media Manager handles filesystem operations, serving Modules, Plugins, Palettes, Images, Videos and GIFs to modV.
+modV handles filesystem operations, serving and hot-reloading Modules, Plugins, Palettes, Images, Videos and GIFs.
 
 ### Media Folder
 
-The Media Folder is where the Media Manager will scan for your Project files.
+The Media Folder is where modV will scan for your Project files.
 
 #### Location
 
@@ -28,7 +28,7 @@ The Media Folder is where the Media Manager will scan for your Project files.
 
 #### Structure
 
-The Media Manager's folder structure is important as it is how it keeps track of assets relating to your Projects.
+The media folder structure is important as it keeps track of assets relating to your Projects.
 
 Projects are the top-level folders, e.g. the `default` Project is at `media/default/`.
 
@@ -63,9 +63,7 @@ For example, you can drag and drop an image into the `image` folder, or a Module
 
 ### GIF and Video processing
 
-Videos and GIFs will automatically be processed by [ffmpeg](https://www.ffmpeg.org/) to make sure they can be used within modV - your original files will not be processed, but copied and then processed.
-
-**@todo: Create a mechanism to avoid automatic processing**
+Videos and GIFs are automatically processed by [ffmpeg](https://www.ffmpeg.org/) to make sure they're compatible with modV - your original files are not processed, but copied and then processed.
 
 ---
 
