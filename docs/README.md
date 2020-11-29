@@ -19,6 +19,14 @@ features:
   details: modV modules support OpenGL (via WebGL) shaders, THREE.js scenes, ISF files and Canvas2D JavaScript. Using Vue.js as a base, modV has an extremely versatile plugin system.
 ---
 
+::: tip Check out our upcoming workshops to learn more about modV
+<UpcomingWorkshops />
+:::
+
+::: details Past Workshops
+<PastWorkshops />
+:::
+
 ## Acknowledgements
 Thank you to:
 

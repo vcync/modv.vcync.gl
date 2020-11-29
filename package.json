@@ -9,7 +9,8 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "vuepress": "^1.5.0"
+    "vuepress": "^1.5.0",
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
