@@ -33,6 +33,7 @@ module.exports = {
             '/v3/guide/expressions',
             '/v3/guide/shortcuts',
             '/v3/guide/writingA2dModule',
+            '/v3/guide/writingAnIsfModule',
           ],
         },
 
