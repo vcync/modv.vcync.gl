@@ -183,7 +183,6 @@ export default {
   },
 
   fragmentShader: `
-   fragmentShader: `
     /*{
       "DESCRIPTION": "Get started with ISF using the default shadertoy shader",
       "CREDIT": "shadertoy for the code & NERDDISCO for converting it to ISF",
