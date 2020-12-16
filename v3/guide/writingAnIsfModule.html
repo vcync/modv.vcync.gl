@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Writing an ISF Module | modV</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="modular audio visualisation powered by JavaScript">
+    <link rel="preload" href="/assets/css/0.styles.6023e61c.css" as="style"><link rel="preload" href="/assets/js/app.a2b93750.js" as="script"><link rel="preload" href="/assets/js/2.dd655dd0.js" as="script"><link rel="preload" href="/assets/js/7.265c12d9.js" as="script"><link rel="prefetch" href="/assets/js/10.b3718bd2.js"><link rel="prefetch" href="/assets/js/11.20ada19c.js"><link rel="prefetch" href="/assets/js/12.32b15c73.js"><link rel="prefetch" href="/assets/js/13.4a4b470d.js"><link rel="prefetch" href="/assets/js/14.e2bda427.js"><link rel="prefetch" href="/assets/js/15.0a44ce4b.js"><link rel="prefetch" href="/assets/js/16.f5876db4.js"><link rel="prefetch" href="/assets/js/17.aea85d8f.js"><link rel="prefetch" href="/assets/js/18.bc2d28c5.js"><link rel="prefetch" href="/assets/js/19.1505c27d.js"><link rel="prefetch" href="/assets/js/20.f42f9fdb.js"><link rel="prefetch" href="/assets/js/21.b0706218.js"><link rel="prefetch" href="/assets/js/22.9ca3c536.js"><link rel="prefetch" href="/assets/js/23.913c9967.js"><link rel="prefetch" href="/assets/js/24.aa8d76a6.js"><link rel="prefetch" href="/assets/js/25.f7a24896.js"><link rel="prefetch" href="/assets/js/26.55ebea03.js"><link rel="prefetch" href="/assets/js/27.37e8e417.js"><link rel="prefetch" href="/assets/js/28.3c39d7d3.js"><link rel="prefetch" href="/assets/js/29.63f57f60.js"><link rel="prefetch" href="/assets/js/3.b7c62d9e.js"><link rel="prefetch" href="/assets/js/30.2c1387bd.js"><link rel="prefetch" href="/assets/js/31.4da5693f.js"><link rel="prefetch" href="/assets/js/32.969fb09b.js"><link rel="prefetch" href="/assets/js/33.434f806d.js"><link rel="prefetch" href="/assets/js/34.c7a455d9.js"><link rel="prefetch" href="/assets/js/35.cb513400.js"><link rel="prefetch" href="/assets/js/36.f849f842.js"><link rel="prefetch" href="/assets/js/37.ded0abe1.js"><link rel="prefetch" href="/assets/js/38.b837b3ee.js"><link rel="prefetch" href="/assets/js/39.2657d69a.js"><link rel="prefetch" href="/assets/js/4.1b836529.js"><link rel="prefetch" href="/assets/js/5.4dced7ce.js"><link rel="prefetch" href="/assets/js/6.eeaa641b.js"><link rel="prefetch" href="/assets/js/8.9316a851.js"><link rel="prefetch" href="/assets/js/9.b2de6812.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6023e61c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">modV</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/2xaa/modV/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Version" class="dropdown-title"><span class="title">Version</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/v3/guide/" class="nav-link router-link-active">
+  v3
+</a></li><li class="dropdown-item"><!----> <a href="/v2/guide/" class="nav-link">
+  v2
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/2xaa/modV/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Version" class="dropdown-title"><span class="title">Version</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/v3/guide/" class="nav-link router-link-active">
+  v3
+</a></li><li class="dropdown-item"><!----> <a href="/v2/guide/" class="nav-link">
+  v2
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/v3/guide/" class="sidebar-heading clickable router-link-active open"><span>Guide</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/v3/guide/" aria-current="page" class="sidebar-link">Getting Started</a></li><li><a href="/v3/guide/media.html" class="sidebar-link">Media</a></li><li><a href="/v3/guide/modules.html" class="sidebar-link">Modules</a></li><li><a href="/v3/guide/groups.html" class="sidebar-link">Groups</a></li><li><a href="/v3/guide/audioReactivity.html" class="sidebar-link">Audio Reactivity</a></li><li><a href="/v3/guide/inputLinks.html" class="sidebar-link">Input Links</a></li><li><a href="/v3/guide/expressions.html" class="sidebar-link">Expressions</a></li><li><a href="/v3/guide/shortcuts.html" class="sidebar-link">Keyboard Shortcuts</a></li><li><a href="/v3/guide/writingA2dModule.html" class="sidebar-link">Writing a 2D Module</a></li><li><a href="/v3/guide/writingAnIsfModule.html" aria-current="page" class="active sidebar-link">Writing an ISF Module</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#what-is-isf" class="sidebar-link">What is ISF?</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_1-create-a-new-file" class="sidebar-link">1. Create a new file</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_2-export-an-object" class="sidebar-link">2. Export an Object</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_3-set-up-the-meta" class="sidebar-link">3. Set up the Meta</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_4-parametrize-debug-your-shader-using-the-isf-web-editor" class="sidebar-link">4. Parametrize &amp; debug your shader using the ISF web editor</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_5-define-your-shader" class="sidebar-link">5. Define your shader</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_6-properties" class="sidebar-link">6. Properties</a></li><li class="sidebar-sub-header"><a href="/v3/guide/writingAnIsfModule.html#_7-putting-everything-together" class="sidebar-link">7. Putting everything together</a></li></ul></li></ul></section></li><li><a href="/v3/development/" class="sidebar-link">Development</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="writing-an-isf-module"><a href="#writing-an-isf-module" class="header-anchor">#</a> Writing an ISF Module</h1> <p>We're going to write a Module which works with the built-in <code>isf</code> Renderer.</p> <p>To follow this guide, we'd recommend having some experience with:</p> <ul><li>JavaScript (ES6+)</li> <li>GLSL
+<ul><li>if you don't already have experience with GLSL then we recommend <a href="https://thebookofshaders.com/" target="_blank" rel="noopener noreferrer">The Book of Shaders<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li> <li><a href="https://isf.video/" target="_blank" rel="noopener noreferrer">Interactive Shader Format<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="what-is-isf"><a href="#what-is-isf" class="header-anchor">#</a> What is ISF?</h2> <p>The <strong>I</strong>nteractive <strong>S</strong>hader <strong>F</strong>ormat is a GLSL format which provides helpful method, common uniforms and also includes a JSON block at the top of the file, defining inputs which can be parsed to create user editable controls.</p> <p>ISF's JSON block also defines the author, description of the shader and render passes. You can learn more about the Interactive Shader Format specification on their website: <a href="https://docs.isf.video/ref_index.html" target="_blank" rel="noopener noreferrer">docs.isf.video<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_1-create-a-new-file"><a href="#_1-create-a-new-file" class="header-anchor">#</a> 1. Create a new file</h2> <p>Save a blank JavaScript file in the <a href="/guide/mediaManager.html#media-folder">Media Manager's media directory</a>. This will need to be placed in a <code>module</code> folder within a Project folder. e.g. <code>[media path]/[project]/module</code>.</p> <p>By saving your Module here the Media Manager will compile your code and send it to modV on every file save. If you've placed your Module within a Group already, you'll need to remove it from the Group and drag your Module in again from the Gallery to use the updated Module.</p> <h2 id="_2-export-an-object"><a href="#_2-export-an-object" class="header-anchor">#</a> 2. Export an Object</h2> <p>Let's get started by exporting an Object. modV Modules are written out as a plain Object.</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_3-set-up-the-meta"><a href="#_3-set-up-the-meta" class="header-anchor">#</a> 3. Set up the Meta</h2> <p>Next up, we'll need to describe our Module with a meta Object block.
+Let's define the Module type as <code>isf</code> and give our Module a <code>name</code> + <code>author</code>.</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  meta<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// this tells modV our Module should be used with the isf renderer</span>
+    type<span class="token operator">:</span> <span class="token string">'isf'</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'Name of the Module'</span><span class="token punctuation">,</span>
+    author<span class="token operator">:</span> <span class="token string">'Name of the Author'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_4-parametrize-debug-your-shader-using-the-isf-web-editor"><a href="#_4-parametrize-debug-your-shader-using-the-isf-web-editor" class="header-anchor">#</a> 4. Parametrize &amp; debug your shader using the ISF web editor</h2> <p>If you already have a shader that you want to transform into ISF, it makes the most sense to use the official <a href="https://editor.isf.video/shaders/new" target="_blank" rel="noopener noreferrer">ISF web editor<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p>When you create a new project there, you will see the following default code in the code editor (click on the icon to open it).</p> <p><img src="/assets/img/modV_isf_guide_code_editor.dba79ab4.jpg" alt="Where to find the ISF Code Editor"></p> <ol><li>The first section, which is commented out with <code>/* */</code> is the ISF JSON block (configuration) with some meta data about the shader, the properties and render passes.</li> <li>The second part is the code of the shader</li></ol> <p>You can remove everything and use this as a starting point for your shader as it already defines some defaults and explains the difference to shadertoy for time and resolution. The <a href="https://editor.isf.video/shaders/5fd9d15fd4849b0013135c0e" target="_blank" rel="noopener noreferrer">interactive demo can also be found<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to play with.</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">/*{
+	&quot;DESCRIPTION&quot;: &quot;&quot;,
+	&quot;CREDIT&quot;: &quot;&quot;,
+	&quot;ISFVSN&quot;: &quot;2&quot;,
+	&quot;CATEGORIES&quot;: [
+		&quot;XXX&quot;
+	],
+	&quot;INPUTS&quot;: [
+		{
+			&quot;NAME&quot;: &quot;alpha&quot;,
+			&quot;TYPE&quot;: &quot;float&quot;,
+			&quot;DEFAULT&quot;: 0.5,
+			&quot;MIN&quot;: 0.0,
+			&quot;MAX&quot;: 1.0
+		}
+	]
+}*/</span>
+
+<span class="token comment">// We can't use</span>
+<span class="token comment">// void mainImage( out vec4 fragColor, in vec2 fragCoord )</span>
+<span class="token comment">// as we would do in shadertoy, but use main() instead</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token punctuation">{</span>
+  <span class="token comment">// ISF is using RENDERSIZE instead of iResolution</span>
+  vec2 uv <span class="token operator">=</span> gl_FragCoord<span class="token punctuation">.</span>xy<span class="token operator">/</span><span class="token constant">RENDERSIZE</span><span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+
+  <span class="token comment">// ISF is using TIME instead of iTime</span>
+  float iTime <span class="token operator">=</span> <span class="token constant">TIME</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// The following line is the default code for a shader</span>
+  <span class="token comment">// created in shadertoy</span>
+  vec3 col <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span>iTime<span class="token operator">+</span>uv<span class="token punctuation">.</span>xyx<span class="token operator">+</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>col<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>If there are any errors the ISF editor will show them to you, which improves debugging a lot. If you still have problems to convert your shader into ISF, you can look into <a href="https://docs.isf.video/quickstart.html#converting-non-isf-glsl-shaders-to-isf" target="_blank" rel="noopener noreferrer">Converting Non-ISF GLSL Shaders to ISF<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> as this covers other differences in the code. And you might want to look at the <a href="https://github.com/mrRay/ISF_Spec/" target="_blank" rel="noopener noreferrer">ISF Specification<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <h2 id="_5-define-your-shader"><a href="#_5-define-your-shader" class="header-anchor">#</a> 5. Define your shader</h2> <p>In <code>isf</code> type Modules, there are two properties on the Module body to define the Shaders we want to use:</p> <ul><li><code>fragmentShader</code></li> <li><code>vertexShader</code></li></ul> <p>The <code>fragmentShader</code> is required, but the <code>vertexShader</code> is optional. Both variables only accept Strings.</p> <p>If you have a larger shader or require syntax highlighting, you may import your shaders using:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> fragmentShader <span class="token keyword">from</span> <span class="token string">'gradient.frag'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> vertexShader <span class="token keyword">from</span> <span class="token string">'gradient.vert'</span><span class="token punctuation">;</span>
+</code></pre></div><p>We'll only be using the <code>fragmentShader</code> property in this guide:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">// meta: { ... },</span>
+
+  fragmentShader<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    /*{
+      &quot;DESCRIPTION&quot;: &quot;Get started with ISF using the default shadertoy shader&quot;,
+      &quot;CREDIT&quot;: &quot;shadertoy&quot;,
+      &quot;ISFVSN&quot;: &quot;2&quot;,
+      &quot;CATEGORIES&quot;: [
+        &quot;gradient&quot;
+      ],
+      &quot;INPUTS&quot;: [
+        {
+          &quot;NAME&quot;: &quot;alpha&quot;,
+          &quot;TYPE&quot;: &quot;float&quot;,
+          &quot;DEFAULT&quot;: 0.5,
+          &quot;MIN&quot;: 0.0,
+          &quot;MAX&quot;: 1.0
+        }
+      ]
+    }*/
+
+    // We can't use
+    // void mainImage( out vec4 fragColor, in vec2 fragCoord )
+    // as we would do in shadertoy, but use main() instead
+    void main()	{
+      // ISF is using RENDERSIZE instead of iResolution
+      vec2 uv = gl_FragCoord.xy/RENDERSIZE.xy;
+
+      // ISF is using TIME instead of iTime
+      float iTime = TIME;
+
+      // The following line is the default code for a shader
+      // created in shadertoy
+      vec3 col = 0.5 + 0.5*cos(iTime+uv.xyx+vec3(0,2,4));
+
+      gl_FragColor = vec4(col, alpha);
+    }
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_6-properties"><a href="#_6-properties" class="header-anchor">#</a> 6. Properties</h2> <p><code>isf</code> Modules' properties are primarily auto-generated from the JSON block at the top of the file. However, if custom controls are required, props may be defined with the same uniform name as in the shader.</p> <h2 id="_7-putting-everything-together"><a href="#_7-putting-everything-together" class="header-anchor">#</a> 7. Putting everything together</h2> <p>The following code puts together everything from above:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  meta<span class="token operator">:</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'isf'</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'Get started with ISF using the default shadertoy shader'</span><span class="token punctuation">,</span>
+    author<span class="token operator">:</span> <span class="token string">'NERDDISCO'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  fragmentShader<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    /*{
+      &quot;DESCRIPTION&quot;: &quot;Get started with ISF using the default shadertoy shader&quot;,
+      &quot;CREDIT&quot;: &quot;shadertoy for the code &amp; NERDDISCO for converting it to ISF&quot;,
+      &quot;ISFVSN&quot;: &quot;2&quot;,
+      &quot;CATEGORIES&quot;: [
+        &quot;gradient&quot;
+      ],
+      &quot;INPUTS&quot;: [
+        {
+          &quot;NAME&quot;: &quot;alpha&quot;,
+          &quot;TYPE&quot;: &quot;float&quot;,
+          &quot;DEFAULT&quot;: 0.5,
+          &quot;MIN&quot;: 0.0,
+          &quot;MAX&quot;: 1.0
+        }
+      ]
+    }*/
+
+    // We can't use
+    // void mainImage( out vec4 fragColor, in vec2 fragCoord )
+    // as we would do in shadertoy, but use main() instead
+    void main()	{
+      // ISF is using RENDERSIZE instead of iResolution
+      vec2 uv = gl_FragCoord.xy/RENDERSIZE.xy;
+
+      // ISF is using TIME instead of iTime
+      float iTime = TIME;
+
+      // The following line is the default code for a shader
+      // created in shadertoy
+      vec3 col = 0.5 + 0.5*cos(iTime+uv.xyx+vec3(0,2,4));
+
+      gl_FragColor = vec4(col, alpha);
+    }
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/v3/guide/writingA2dModule.html" class="prev">
+        Writing a 2D Module
+      </a></span> <span class="next"><a href="/v3/development/">
+        Development
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a2b93750.js" defer></script><script src="/assets/js/2.dd655dd0.js" defer></script><script src="/assets/js/7.265c12d9.js" defer></script>
+  </body>
+</html>
