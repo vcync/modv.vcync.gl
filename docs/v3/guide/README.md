@@ -1,7 +1,7 @@
 # Getting Started
 
 :::warning
-These are the docs for modV 3.  
+These are the docs for modV 3.
 If you are looking for modV 2, please switch version in the top right.
 :::
 
@@ -15,6 +15,25 @@ The latest modV version is on modV's GitHub Repo under "Releases". [https://gith
 * NVIDIA or ATI graphics card
 * Intel i5 or better
 * 4GB+ RAM
+
+
+## GPU Settings
+
+In order to get the most performance out of your GPU, you can follow these recommendations.
+
+### NVIDIA
+
+* Open the `NVIDIA Control Panel`
+* Select `3D Settings > Manage 3D settings`
+  * In the `Program Settings` select `modV`
+  * For the `prefferred graphics processor` select `High Performance NVIDIA processor`
+  * For `Specify settings for this programm` set these:
+    * Power Mangement Mode: `Prefer Maximum Performance`
+    * Vertical Sync: `off`
+* Select `Display > Adjust desktop size and position`
+  * Make sure that `Perform Scaling on` is `GPU` for every screen that is attached to your computer
+  * If it's not possible to save this setting, change the `scaling mode` to `no scaling`
+
 
 ## Audio Routing
 
