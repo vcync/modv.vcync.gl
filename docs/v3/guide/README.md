@@ -19,24 +19,35 @@ The latest modV version is on modV's GitHub Repo under "Releases". [https://gith
 
 ## GPU Settings
 
-In order to get the most performance out of your GPU, you can follow these recommendations.
+### Windows
+Windows laptops may have dual GPUs, one on the processor, the other dedicated.
+Either Windows or the GPU's software determine which GPU certain programs will operate on.
 
-### NVIDIA
+modV needs to run on the most powerful GPU, in most cases the dedicated GPU.
 
-* Open the `NVIDIA Control Panel`
-* Select `3D Settings > Manage 3D settings`
-  * In the `Program Settings` select `modV`
-  * For the `prefferred graphics processor` select `High Performance NVIDIA processor`
-  * For `Specify settings for this programm` set these:
-    * Power Mangement Mode: `Prefer Maximum Performance`
-    * Vertical Sync: `off`
-* Select `Display > Adjust desktop size and position`
-  * Make sure that `Perform Scaling on` is `GPU` for every screen that is attached to your computer
-  * If it's not possible to save this setting, change the `scaling mode` to `no scaling`
+#### NVIDIA
+1. Open the `NVIDIA Control Panel`
+2. Select `3D Settings > Manage 3D settings`
+  * 1. *In the Program Settings:* select `modV`
+    2. *Under Preferred Graphics Processor:* select `High Performance NVIDIA processor`
+    3. (optional) *In Specify settings for this program:* ensure these options:
+      * Power Mangement Mode: `Prefer Maximum Performance`
+      * Vertical Sync: `off`
+3. Select `Display > Adjust desktop size and position`
+  * 1. Set `Perform Scaling on` to `GPU` for every screen attached to your computer
+  * 2. If it's not possible to save this setting, change the `scaling mode` to `no scaling`
 
+### macOS
+macOS will automatically enable the dedicated GPU, if present.
+
+### Linux
+
+#### NVIDIA
+NVIDIA Optimus users will need to make sure the system is running on the dedicated GPU.
+If you are using "switchable graphics", make sure the system knows to switch when modV is running.
+Otherwise, use NVIDIA graphics over Intel.
 
 ## Audio Routing
-
 To use modV as an audio visualiser you will need an audio source.
 
 Commonly available audio sources include:
