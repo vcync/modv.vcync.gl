@@ -30,9 +30,9 @@ modV needs to run on the most powerful GPU, in most cases the dedicated GPU.
 2. Select `3D Settings > Manage 3D settings`
     1. *In the Program Settings:* select `modV`
     2. *Under Preferred Graphics Processor:* select `High Performance NVIDIA processor`
-    3. (optional) *In Specify settings for this program:* ensure these options:
+    3. *In Specify settings for this program:* ensure these options:
         * Power Mangement Mode: `Prefer Maximum Performance`
-        * Vertical Sync: `off`
+        * (optional) Vertical Sync: `off`
 3. (optional) Select `Display > Adjust desktop size and position`
     1. Set `Perform Scaling on` to `GPU` for every screen attached to your computer
     2. If it's not possible to save this setting, change the `scaling mode` to `no scaling`
