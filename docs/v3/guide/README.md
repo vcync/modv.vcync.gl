@@ -1,7 +1,7 @@
 # Getting Started
 
 :::warning
-These are the docs for modV 3.  
+These are the docs for modV 3.
 If you are looking for modV 2, please switch version in the top right.
 :::
 
@@ -16,8 +16,38 @@ The latest modV version is on modV's GitHub Repo under "Releases". [https://gith
 * Intel i5 or better
 * 4GB+ RAM
 
-## Audio Routing
 
+## GPU Settings
+
+### Windows
+Windows laptops may have dual GPUs, one on the processor, the other dedicated.
+Either Windows or the GPU's software determine which GPU certain programs will operate on.
+
+modV needs to run on the most powerful GPU, in most cases the dedicated GPU.
+
+#### NVIDIA
+1. Open the `NVIDIA Control Panel`
+2. Select `3D Settings > Manage 3D settings`
+    1. *In the Program Settings:* select `modV`
+    2. *Under Preferred Graphics Processor:* select `High Performance NVIDIA processor`
+    3. *In Specify settings for this program:* ensure these options:
+        * Power Mangement Mode: `Prefer Maximum Performance`
+        * (optional) Vertical Sync: `off`
+3. (optional) Select `Display > Adjust desktop size and position`
+    1. Set `Perform Scaling on` to `GPU` for every screen attached to your computer
+    2. If it's not possible to save this setting, change the `scaling mode` to `no scaling`
+
+### macOS
+macOS will automatically enable the dedicated GPU, if present.
+
+### Linux
+
+#### NVIDIA
+NVIDIA Optimus users will need to make sure the system is running on the dedicated GPU.
+If you are using "switchable graphics", make sure the system knows to switch when modV is running.
+Otherwise, use NVIDIA graphics over Intel.
+
+## Audio Routing
 To use modV as an audio visualiser you will need an audio source.
 
 Commonly available audio sources include:
