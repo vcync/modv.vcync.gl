@@ -1,6 +1,14 @@
 const state = {
   workshops: [
     {
+      title: "Modular Audio Visualisation with modV @ JSConf Mexico",
+      location: "Online",
+      url: "https://jsconf.mx/en",
+      date_start: new Date("12/01/2021 21:00 CET"),
+      date_end: new Date("12/01/2021 22:30 CET")
+    },
+    
+    {
       title: "CODAME ART+TECH Festival",
       location: "Online",
       url: "https://codame.com/events/modular-audio-visualisation-with-modv",
