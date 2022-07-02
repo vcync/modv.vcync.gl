@@ -6,6 +6,12 @@ module.exports = {
   description: 'modular audio visualisation powered by JavaScript',
 
   themeConfig: {
+    docsRepo: 'vcync/modv.vcync.gl',
+    docsDir: 'docs',
+    docsBranch: 'main',
+    editLinks: true,
+    editLinkText: 'Help us improve this page',
+
     nav: [
       { text: 'GitHub', link: 'https://github.com/2xaa/modV/' },
       {
