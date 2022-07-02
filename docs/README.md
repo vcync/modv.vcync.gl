@@ -30,6 +30,7 @@ features:
 ## Acknowledgements
 Thank you to:
 
+<!-- alex ignore her-him -->
 * Hugh Rawlinson, Nevo Segal and Jakub Fiala for the incredible audio analysis engine, [meyda](https://github.com/hughrawlinson/meyda)
 * [Dario Villanueva](http://alolo.co) for his advice and introduction to live visuals which inspired this project
 * [Tim Pietrusky](http://timpietrusky.com/) & family for the bi-yearly modV hackday
