@@ -4,9 +4,17 @@ sidebarDepth: 2
 
 # Media
 
+:::warning
+Video is currently unsupported in modV 3. We're tracking this here: [https://github.com/vcync/modV/issues/521](https://github.com/vcync/modV/issues/521)
+
+If video is required, virtual webcams such as [OBS Virtual Camera](https://obsproject.com/forum/resources/obs-virtualcam.539/) are an option.
+:::
+
+
+
 ## Supported Media
 
-modV handles filesystem operations, serving and hot-reloading Modules, Plugins, Palettes, Images, Videos and GIFs.
+modV handles filesystem operations, serving and hot-reloading Modules, Plugins, Images and Videos.
 
 ### Media Folder
 
@@ -14,17 +22,17 @@ The Media Folder is where modV will scan for your Project files.
 
 #### Location
 
-##### Mac
+##### macOS
 
 `~/Library/Application\ Support/modV/media/`
-
-##### Linux
-
-`~/.config/modV/media/`
 
 ##### Windows
 
 `%appdata%\modV\media\`
+
+##### Linux
+
+`~/.config/modV/media/`
 
 #### Structure
 
@@ -37,8 +45,7 @@ Projects are the top-level folders, e.g. the `default` Project is at `media/defa
 ├─ default
 │  ├─ image
 │  │  ├─ cat.jpg
-│  │  ├─ dog.png
-│  │  └─ dance.gif
+│  │  └─ dog.png
 │  ├─ module
 │  │  └─ Waveform.js
 │  ├─ palette
@@ -59,13 +66,6 @@ To add media to a Project, place an asset into a corresponding folder using your
 
 For example, you can drag and drop an image into the `image` folder, or a Module into the `module` folder.
 
-
-
-### GIF and Video processing
-
-Videos and GIFs are automatically processed by [ffmpeg](https://www.ffmpeg.org/) to make sure they're compatible with modV - your original files are not processed, but copied and then processed.
-
----
 
 ## Using an image
 

@@ -9,6 +9,7 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
+    "js-yaml": "^4.1.0",
     "vuepress": "^1.5.0",
     "vuex": "^3.6.0"
   },
