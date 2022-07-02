@@ -1,9 +1,17 @@
 # Keyboard Shortcuts
 
-### Global Search
+On macOS, <kbd>cmd</kbd> is the main shortcut key.
 
-ctrl/cmd + shift + f
+On Windows and Linux, <kbd>Ctrl</kbd> is the main shortcut key.
 
-### Module Search
+## Global Search
 
-ctrl/cmd + f
+Brings up a panel which will highlight and focus any UI element in modV which matches your search term.
+
+<kbd>Ctrl/cmd</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
+
+## Module Search
+
+Focuses the Module Gallery's search box.
+
+<kbd>Ctrl/cmd</kbd> + <kbd>F</kbd>

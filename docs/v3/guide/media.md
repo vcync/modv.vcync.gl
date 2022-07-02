@@ -22,13 +22,13 @@ The Media Folder is where modV will scan for your Project files.
 
 #### Location
 
-##### Windows
-
-`%appdata%\modV\media\`
-
 ##### macOS
 
 `~/Library/Application\ Support/modV/media/`
+
+##### Windows
+
+`%appdata%\modV\media\`
 
 ##### Linux
 

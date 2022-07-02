@@ -19,6 +19,16 @@ To use modV as an audio visualiser you will need an audio source such as your co
 A Virtual Audio Device allows a user to capture audio from their system and use it as an input in an application.
 This is useful to route applications such as Spotify or SoundCloud into modV.
 
+#### macOS
+
+Soundflower is open source and a free virtual audio device which can route audio between applications, download that [here](https://github.com/mattingalls/Soundflower/releases/).
+
+- Set the system audio to route through SoundFlower:
+  - 1. Open "Audio MIDI Setup" in `/Applications/Utilities/`
+    2. Create a new "Multi-Output Device" with the `+` button in the bottom left
+    3. Add "Soundflower 2ch" and any other device you'd like audio to output to (such as "Built-in Output" to listen to the audio)
+    4. Select your new Multi-Output Device in "System Preferences > Sound" to be the output
+
 #### Windows
 
 VB Cable is a free virtual audio device which can route audio between applications, download that [here](https://vb-audio.com/Cable/index.htm).
@@ -31,16 +41,6 @@ VB Cable is a free virtual audio device which can route audio between applicatio
 - Listening to VB CABLE's output:
   - 1. _In the Recording tab:_ Right click `CABLE Output` and select `Properties`
     2. _In the Listen tab:_ Check `Listen to the device` and select the Playback device to your speakers or headphones in the dropdown menu
-
-#### macOS
-
-Soundflower is open source and a free virtual audio device which can route audio between applications, download that [here](https://github.com/mattingalls/Soundflower/releases/).
-
-- Set the system audio to route through SoundFlower:
-  - 1. Open "Audio MIDI Setup" in `/Applications/Utilities/`
-    2. Create a new "Multi-Output Device" with the `+` button in the bottom left
-    3. Add "Soundflower 2ch" and any other device you'd like audio to output to (such as "Built-in Output" to listen to the audio)
-    4. Select your new Multi-Output Device in "System Preferences > Sound" to be the output
 
 #### Linux
 
