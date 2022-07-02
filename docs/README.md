@@ -14,7 +14,7 @@ features:
 - title: Versatile Controls
   details: Assign LFOs, math expressions, MIDI inputs and audio features to controls. All assignments can be saved into presets.
 - title: Mixing and Compositing
-  details: Route, blend, pipe and control opacity per module and group. Easily re-arrange modules or layers via drag and drop UI.
+  details: Route, blend, pipe and control opacity per module and group. Re-arrange modules or groups via drag and drop UI.
 - title: Modular Design
   details: modV modules support OpenGL (via WebGL) shaders, THREE.js scenes, ISF files and Canvas2D JavaScript. Using Vue.js as a base, modV has an extremely versatile plugin system.
 ---

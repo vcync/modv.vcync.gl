@@ -30,6 +30,7 @@ module.exports = {
             '/v3/guide/groups',
             '/v3/guide/audioReactivity',
             '/v3/guide/inputLinks',
+            '/v3/guide/tweens',
             '/v3/guide/expressions',
             '/v3/guide/shortcuts',
             '/v3/guide/writingA2dModule',
