@@ -29,7 +29,7 @@ module.exports = {
       {
         text: "Version",
         items: [
-          { text: "v3", link: "/v3/guide/" },
+          { text: "v3", link: "/v3/learn/" },
           { text: "v2", link: "/v2/guide/" }
         ]
       }
