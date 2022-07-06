@@ -1,12 +1,17 @@
 # Getting Started
 
-We'll run through the system requirements for modV, where to download the latest version and how to make sure modV runs smoothly on your computer.
+This page runs through where to download the latest version, what to expect when starting modV for the first time, the system requirements for modV, and how to make sure modV runs smoothly on your computer.
 
-## Help, Bugs or Suggestions
+Once you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](/v3/learn/video-tutorials.html)) or check out the documentation ([/v3/documentation/](/v3/documentation/)).
 
-Please use our forum at [https://github.com/vcync/modV/discussions](https://github.com/vcync/modV/discussions) to ask for help or suggest features.
+## Download
+The latest modV version can be found from modV's GitHub Repo under "Releases".
+[https://github.com/vcync/modV/releases/latest](https://github.com/vcync/modV/releases/latest)
 
-Found a bug? File it at [https://github.com/vcync/modV/issues](https://github.com/vcync/modV/issues).
+Use `.dmg` for macOS, `.exe` for Windows and `.AppImage` for Linux.
+
+## Starting modV for the first time
+modV will create a media folder with a default project upon first run. Read more about the media folder here: [/v3/documentation/media.html](/v3/documentation/media.html)
 
 ## System Requirements
 
@@ -19,13 +24,6 @@ Found a bug? File it at [https://github.com/vcync/modV/issues](https://github.co
 - Discrete GPU
 - Intel i5 or better
 - 4GB+ RAM
-
-
-## Download
-The latest modV version can be found from modV's GitHub Repo under "Releases".
-[https://github.com/vcync/modV/releases/latest](https://github.com/vcync/modV/releases/latest)
-
-Use `.dmg` for macOS, `.exe` for Windows and `.AppImage` for Linux.
 
 ## GPU Settings
 To make sure modV runs smoothly on your computer, you may need to tell your system or GPU driver to run modV on the discrete GPU.
@@ -81,12 +79,12 @@ We also recommend to install the proprietary NVIDIA graphics drivers rather than
 If so, then consider contributing to this page using the link at the bottom of the page.
 :::
 
-## Video Tutorial
+## Next steps
 
-Once you're set up, watch this 10 minute video walking through how to get started with modV. It should get you up to speed with the basics.
+If you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](/v3/learn/video-tutorials.html)) or check out the documentation ([/v3/documentation/](/v3/documentation/)).
 
-:::tip Can you help transcribe this video?
-If you'd like to transcribe this video, please reach out in our forum ([https://github.com/vcync/modV/discussions](https://github.com/vcync/modV/discussions)).
-:::
+## Help, Bugs or Suggestions
 
-<iframe class="sixteen-nine" src="https://www.youtube-nocookie.com/embed/kGEyTkzFKLk?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Please use our forum at [https://github.com/vcync/modV/discussions](https://github.com/vcync/modV/discussions) to ask for help or suggest features.
+
+Found a bug? File it at [https://github.com/vcync/modV/issues](https://github.com/vcync/modV/issues).

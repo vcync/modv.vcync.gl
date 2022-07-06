@@ -1,50 +1,31 @@
 <template>
-  <main
-    class="home"
-    aria-labelledby="main-title"
-  >
+  <main class="home" aria-labelledby="main-title">
     <header class="hero">
-      <div class="hero-image-container">
-        <transition name="fade" mode="in-out">
-          <img class="capture-image" :key="capture" :src="`/captures/${capture}`">
-        </transition>
-        <img
-          class="hero-image"
-          v-if="data.heroImage"
-          :src="$withBase(data.heroImage)"
-          alt="hero"
-        >
-      </div>
+      <!-- <h1 v-if="data.heroText !== null" id="main-title">
+        {{ data.heroText || $title || "Hello" }}
+      </h1> -->
 
-      <h1
-        v-if="data.heroText !== null"
-        id="main-title"
-      >
-        {{ data.heroText || $title || 'Hello' }}
-      </h1>
+      <iframe
+        class="sixteen-nine hero-video"
+        src="https://www.youtube-nocookie.com/embed/?autoplay=1&color=white&disablekb=1&mute=1&rel=0&showinfo=0&playsinline=1&loop=1&list=PL4xuaQNtunCy6gE9OFkD__DigHtz8tDmn&listType=playlist&enablejsapi=1&widgetid=1&controls=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
 
-      <p
-        v-if="data.tagline !== null"
-        class="description"
-      >
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+      <p v-if="data.tagline !== null" class="description">
+        {{ data.tagline || $description || "Welcome to your VuePress site" }}
       </p>
 
-      <p
-        v-if="data.actionText && data.actionLink"
-        class="action"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
+      <p v-if="data.actionText && data.actionLink" class="action">
+        <NavLink class="action-button" :item="actionLink" />
       </p>
     </header>
 
-    <div
-      v-if="data.features && data.features.length"
-      class="features"
-    >
+    <!-- https://www.youtube.com/embed/3YpmyMcI0kk?autoplay=1&color=white&disablekb=1&mute=1&rel=0&showinfo=0&playsinline=1&loop=1&enablejsapi=1&origin=https%3A%2F%2Fwray.pro&widgetid=1 -->
+
+    <div v-if="data.features && data.features.length" class="features">
       <div
         v-for="(feature, index) in data.features"
         :key="index"
@@ -57,20 +38,17 @@
 
     <Content class="theme-default-content custom" />
 
-    <div
-      v-if="footer"
-      class="footer"
-    >
+    <div v-if="footer" class="footer">
       {{ footer }}
     </div>
   </main>
 </template>
 
 <script>
-import NavLink from '@parent-theme/components/NavLink.vue'
+import NavLink from "@parent-theme/components/NavLink.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
 
   components: { NavLink },
 
@@ -78,28 +56,28 @@ export default {
     return {
       captures: [],
       currentCapture: 0,
-      footer: `MIT Licensed | Copyright © 2014-${(new Date()).getFullYear()} Sam Wray`,
+      footer: `MIT Licensed | Copyright © 2014-${new Date().getFullYear()} vcync`
     };
   },
 
   computed: {
-    data () {
-      return this.$page.frontmatter
+    data() {
+      return this.$page.frontmatter;
     },
 
-    actionLink () {
+    actionLink() {
       return {
         link: this.data.actionLink,
         text: this.data.actionText
-      }
+      };
     },
 
     capture() {
       return this.captures[this.currentCapture];
-    },
+    }
   },
 
-   created() {
+  created() {
     this.captures = [
       "8.jpg",
       "7.jpg",
@@ -108,7 +86,7 @@ export default {
       "5.jpg",
       "6.jpg",
       "1.jpg",
-      "3.jpg",
+      "3.jpg"
     ];
 
     this.currentCapture = 0;
@@ -125,9 +103,9 @@ export default {
       } else {
         this.currentCapture = 0;
       }
-    },
+    }
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -148,7 +126,7 @@ export default {
     h1, .description, .action
       margin 1.8rem auto
     .description
-      max-width 35rem
+      max-width 75rem
       font-size 1.6rem
       line-height 1.3
       color lighten($textColor, 40%)
@@ -222,48 +200,54 @@ export default {
 </style>
 
 <style lang="scss">
-  @media (max-width: 419px) {
-    .home .hero img {
-      max-height: unset;
-    }
+@media (max-width: 419px) {
+  .home .hero img {
+    max-height: unset;
+  }
+}
+
+.home .hero .hero-video {
+  border-radius: 4px;
+  margin-top: 1.8rem;
+}
+
+.hero-image-container {
+  border-radius: 50%;
+  overflow: hidden;
+  max-height: 280px;
+  max-width: 280px;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  margin: 3rem auto 1.5rem;
+
+  img.capture-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    margin: 0;
+    // transform: scale(1.5);
   }
 
-  .hero-image-container {
-    border-radius: 50%;
-    overflow: hidden;
-    max-height: 280px;
-    max-width: 280px;
-    display: inline-flex;
+  img.hero-image {
+    margin: 0 !important;
     width: 100%;
     height: 100%;
     position: relative;
-
-    margin: 3rem auto 1.5rem;
-
-    img.capture-image {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background-color: #000;
-      margin: 0;
-      // transform: scale(1.5);
-    }
-
-    img.hero-image {
-      margin: 0 !important;
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
   }
+}
 
-  .fade-enter-active, .fade-leave-active {
-    transition: all 4s;
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 4s;
+}
 
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-    transform: scale(1.3);
-  }
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: scale(1.3);
+}
 </style>

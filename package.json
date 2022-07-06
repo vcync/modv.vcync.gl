@@ -2,7 +2,7 @@
   "name": "modv.vcync.gl",
   "version": "0.0.8",
   "description": "Website for modV",
-  "author": "Sam Wray <sam@wray.pro>",
+  "author": "vcync",
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
