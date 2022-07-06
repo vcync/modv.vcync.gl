@@ -50,7 +50,7 @@ VB Cable is a free virtual audio device which can route audio between applicatio
 2. This [tutorial](https://www.kirsle.net/blog/entry/redirect-audio-out-to-mic-in-linux) shows how to setup the Input Devices to show your monitoring
 3. When you start the modV application, your browser should appear as a recording device in the `Recording` tab
 
-![Browser input device in pavucontrol](./images/pavucontrol.png)
+![Browser input device in pavucontrol](/images/pavucontrol.png)
 
 
 ## What is an Audio Feature?
