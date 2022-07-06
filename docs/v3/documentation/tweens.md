@@ -8,7 +8,7 @@ sidebarDepth: 2
 1. Have a Module ready and select one of the props so it shows up in the Input Config panel.
     I've selected Size on the Text Module here.
 
-    ![Text Module's size prop selected](./images/tweens-1.png)
+    ![Text Module's size prop selected](/images/tweens-1.png)
 
 2. Play around with the Module prop and find a few values you'd like to animate between.
     I found 100 and 200 for the Text Module's size worked well for me.
@@ -16,7 +16,7 @@ sidebarDepth: 2
     The format for the Data is an array of arrays, e.g. `[[100], [200]]`.
     Type this into the Data input and press tab or click away from the input to make it lose the focus ring - your Tween will update.
 
-    ![Showing the data format for tweens](./images/tweens-2.png)
+    ![Showing the data format for tweens](/images/tweens-2.png)
 
 ## Tween properties
 

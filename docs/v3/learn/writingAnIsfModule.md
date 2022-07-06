@@ -58,7 +58,7 @@ If you already have a shader that you want to transform into ISF, it makes the m
 
 When you create a new project there, you will see the following default code in the code editor (click on the icon to open it).
 
-![Where to find the ISF Code Editor](./images/modV_isf_guide_code_editor.jpg)
+![Where to find the ISF Code Editor](/images/modV_isf_guide_code_editor.jpg)
 
 1. The first section, which is commented out with `/* */` is the ISF JSON block (configuration) with some meta data about the shader, the properties and render passes.
 2. The second part is the code of the shader

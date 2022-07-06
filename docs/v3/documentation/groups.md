@@ -41,10 +41,10 @@ For example, we have in a Group:
 With Pipeline enabled we will affect the output of Text with Wobble without seeing the result of the Text module "behind" Wobble.
 
 Without Pipeline enabled:
-![Pipeline not enabled](./images/pipeline-1.png)
+![Pipeline not enabled](/images/pipeline-1.png)
 
 With Pipeline enabled:
-![Pipeline enabled](./images/pipeline-2.png)
+![Pipeline enabled](/images/pipeline-2.png)
 
 ::: warning Performance
 Use Pipeline sparingly where possible. With Pipeline enabled, modV requires six extra draw operations per Module to cache and clear the Group Canvas, potentially causing lag.
