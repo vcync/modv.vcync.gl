@@ -3,20 +3,21 @@ home: true
 heroTitle: modV
 heroImage: /modv-logo.svg
 actionText: Get Started →
-actionLink: /v3/guide/
+actionLink: /v3/learn/
 features:
 - title: Input / Output
   details: Webcam, NDI and audio input and multi-window output, for displaying on multiple displays.
 - title: Audio Analysis
-  details: Advanced audio analysis using Meyda. modV also features automatic BPM detection and tap tempo.
+  details: Audio feature analysis provided by Meyda. FFT banding is a thing of the past! Use math expressions and time-domain smoothing to modify the incoming value in real-time. Automatic BPM detection and tap-tempo are also available.
 - title: Media Manager
-  details: Save and load presets with modV's built-in Media Manager. Create projects for presets, images, videos, GIFs, color palettes and more!
+  details: Save and load presets with modV's built-in Media Manager. Create projects to organise modules, presets, images, videos and color palettes!
 - title: Versatile Controls
-  details: Assign LFOs, math expressions, MIDI inputs and audio features to controls. All assignments can be saved into presets.
+  details: Assign any Module property to an audio feature, MIDI note or CC, or create a Tween to animate the property.
 - title: Mixing and Compositing
   details: Route, blend, pipe and control opacity per module and group. Re-arrange modules or groups via drag and drop UI.
-- title: Modular Design
-  details: modV modules support OpenGL (via WebGL) shaders, THREE.js scenes, ISF files and Canvas2D JavaScript. Using Vue.js as a base, modV has an extremely versatile plugin system.
+- title: Code your own Modules
+  details: Use JavaScript's Canvas2D, THREE.js, ISF or GLSL ES 1.0 & 3.0 to create new Modules with hot-reloading.
+
 ---
 
 ::: tip Check out our upcoming workshops to learn more about modV

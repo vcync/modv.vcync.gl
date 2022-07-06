@@ -1,5 +1,8 @@
 {
   "recommendations": [
-    "tlahmann.alex-linter"
+    "tlahmann.alex-linter",
+    "sysoev.language-stylus",
+    "editorconfig.editorconfig",
+    "octref.vetur"
   ]
 }
