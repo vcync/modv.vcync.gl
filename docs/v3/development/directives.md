@@ -47,7 +47,7 @@ You should add your own ID for components which will mount multiple times. If yo
 
 ## `searchTerms`
 
-The [Global Search](/v3/guide/shortcuts.html#global-search) feature allows users to search any UI in modV. When searching modV will highlight elements in the DOM with a maching search term.
+The [Global Search](/v3/documentation/shortcuts.html#global-search) feature allows users to search any UI in modV. When searching modV will highlight elements in the DOM with a maching search term.
 
 modV implements a directive named `searchTerms` so components can add their own terms to be searched.
 
