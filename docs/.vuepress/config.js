@@ -24,6 +24,7 @@ module.exports = {
     editLinkText: "Help us improve this page",
 
     nav: [
+      { text: "Forum", link: "https://github.com/vcync/modV/discussions" },
       { text: "GitHub", link: "https://github.com/2xaa/modV/" },
       {
         text: "Version",
