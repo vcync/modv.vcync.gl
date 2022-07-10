@@ -2,7 +2,7 @@
 
 This page runs through where to download the latest version, what to expect when starting modV for the first time, the system requirements for modV, and how to make sure modV runs smoothly on your computer.
 
-Once you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](/v3/learn/video-tutorials.html)) or check out the documentation ([/v3/documentation/](/v3/documentation/)).
+Once you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](./video-tutorials.md)) or check out the documentation ([/v3/documentation/](../documentation/shortcuts.md)).
 
 ## Download
 The latest modV version can be found from modV's GitHub Repo under "Releases".
@@ -11,7 +11,7 @@ The latest modV version can be found from modV's GitHub Repo under "Releases".
 Use `.dmg` for macOS, `.exe` for Windows and `.AppImage` for Linux.
 
 ## Starting modV for the first time
-modV will create a media folder with a default project upon first run. Read more about the media folder here: [/v3/documentation/media.html](/v3/documentation/media.html)
+modV will create a media folder with a default project upon first run. Read more about the media folder here: [/v3/documentation/media.html](../documentation/media.md)
 
 ## System Requirements
 
@@ -81,7 +81,7 @@ If so, then consider contributing to this page using the link at the bottom of t
 
 ## Next steps
 
-If you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](/v3/learn/video-tutorials.html)) or check out the documentation ([/v3/documentation/](/v3/documentation/)).
+If you're all set up, try our video tutorials ([/v3/learn/video-tutorials.html](./video-tutorials.md)) or check out the documentation ([/v3/documentation/](../documentation/shortcuts.md)).
 
 ## Help, Bugs or Suggestions
 

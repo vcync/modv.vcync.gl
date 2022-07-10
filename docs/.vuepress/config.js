@@ -11,9 +11,9 @@ module.exports = {
       "meta",
       {
         name: "keywords",
-        content: "vj software, audio visualiser, open source, vj"
-      }
-    ]
+        content: "vj software, audio visualiser, open source, vj",
+      },
+    ],
   ],
 
   themeConfig: {
@@ -24,15 +24,16 @@ module.exports = {
     editLinkText: "Help us improve this page",
 
     nav: [
+      { text: "Patreon", link: "https://patreon.com/vcync" },
       { text: "Forum", link: "https://github.com/vcync/modV/discussions" },
-      { text: "GitHub", link: "https://github.com/2xaa/modV/" },
+      { text: "GitHub", link: "https://github.com/2xaa/modV" },
       {
         text: "Version",
         items: [
           { text: "v3", link: "/v3/learn/" },
-          { text: "v2", link: "/v2/guide/" }
-        ]
-      }
+          { text: "v2", link: "/v2/guide/" },
+        ],
+      },
     ],
 
     sidebar: {
@@ -45,25 +46,25 @@ module.exports = {
             "/v3/learn/",
             "/v3/learn/video-tutorials",
             "/v3/learn/writingA2dModule",
-            "/v3/learn/writingAnIsfModule"
-          ]
+            "/v3/learn/writingAnIsfModule",
+          ],
         },
 
         {
           title: "Documentation",
-          path: "/v3/documentation/shortcuts"
+          path: "/v3/documentation/shortcuts",
         },
 
         {
           title: "Development",
-          path: "/v3/development/"
-        }
+          path: "/v3/development/",
+        },
       ],
 
       "/v3/documentation/": [
         {
           title: "Learn",
-          path: "/v3/learn/"
+          path: "/v3/learn/",
         },
 
         {
@@ -72,39 +73,39 @@ module.exports = {
           collapsable: false,
           children: [
             "/v3/documentation/shortcuts",
-            "/v3/documentation/media",
             "/v3/documentation/modules",
             "/v3/documentation/groups",
+            "/v3/documentation/media",
             "/v3/documentation/audioReactivity",
             "/v3/documentation/inputLinks",
             "/v3/documentation/tweens",
-            "/v3/documentation/expressions"
-          ]
+            "/v3/documentation/expressions",
+          ],
         },
 
         {
           title: "Development",
-          path: "/v3/development/"
-        }
+          path: "/v3/development/",
+        },
       ],
 
       "/v3/development/": [
         {
           title: "Learn",
-          path: "/v3/learn/"
+          path: "/v3/learn/",
         },
 
         {
           title: "Documentation",
-          path: "/v3/documentation/shortcuts"
+          path: "/v3/documentation/shortcuts",
         },
 
         {
           title: "Development",
           path: "/v3/development/",
           collapsable: false,
-          children: ["/v3/development/", "/v3/development/directives"]
-        }
+          children: ["/v3/development/", "/v3/development/directives"],
+        },
       ],
 
       "/v2/": [
@@ -120,8 +121,8 @@ module.exports = {
             "/v2/guide/usingTheExpressionEditor",
             "/v2/guide/writingA2DModule",
             "/v2/guide/writingAShaderModule",
-            "/v2/guide/writingAnIsfModule"
-          ]
+            "/v2/guide/writingAnIsfModule",
+          ],
         },
         {
           title: "API Reference",
@@ -135,10 +136,10 @@ module.exports = {
             "/v2/api/palette",
             "/v2/api/contextMenu",
             "/v2/api/mediaManager",
-            "/v2/api/mediaManagerClient"
-          ]
-        }
-      ]
-    }
-  }
+            "/v2/api/mediaManagerClient",
+          ],
+        },
+      ],
+    },
+  },
 };
