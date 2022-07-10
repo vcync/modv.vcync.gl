@@ -20,6 +20,8 @@ modV handles filesystem operations, serving and hot-reloading Modules, Plugins, 
 
 The Media Folder is where modV will scan for your Project files.
 
+Open the Media Folder in the File Menu by clicking "Open Media folder".
+
 #### Location
 
 ##### macOS
@@ -36,7 +38,7 @@ The Media Folder is where modV will scan for your Project files.
 
 #### Structure
 
-The media folder structure is important as it keeps track of assets relating to your Projects.
+The Media Folder structure is important as it keeps track of assets relating to your Projects.
 
 Projects are the top-level folders, e.g. the `default` Project is at `media/default/`.
 
@@ -69,7 +71,7 @@ For example, you can drag and drop an image into the `image` folder, or a Module
 
 ## Using an image
 
-1. Add the image into the `image` folder
-2. Add the `Texture 2D` module into a group
-3. In the property-inspector for the module select `image` in the `texture` property, which adds a new list underneath
-4. In the list, select the image you added into the `image` folder
+1. Add an image into the `image` folder of a Project
+2. Add the `Texture 2D` Module to a Group and click the Module in the Group to focus it
+3. In the Module Inspector, set the `texture` property to `image` to show a dropdown of available images
+4. Select the image you added into the `image` folder
