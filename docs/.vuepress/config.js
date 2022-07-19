@@ -47,17 +47,18 @@ module.exports = {
             "/v3/learn/video-tutorials",
             "/v3/learn/writingA2dModule",
             "/v3/learn/writingAnIsfModule",
+            "/v3/learn/recordingAndStreamingUsingObs"
           ],
         },
 
         {
           title: "Documentation",
-          path: "/v3/documentation/shortcuts",
+          path: "/v3/documentation/userInterface",
         },
 
         {
           title: "Development",
-          path: "/v3/development/",
+          path: "/v3/development/setup",
         },
       ],
 
@@ -69,9 +70,10 @@ module.exports = {
 
         {
           title: "Documentation",
-          path: "/v3/documentation/shortcuts",
+          path: "/v3/documentation/",
           collapsable: false,
           children: [
+            "/v3/documentation/userInterface",
             "/v3/documentation/shortcuts",
             "/v3/documentation/modules",
             "/v3/documentation/groups",
@@ -80,12 +82,13 @@ module.exports = {
             "/v3/documentation/inputLinks",
             "/v3/documentation/tweens",
             "/v3/documentation/expressions",
+            "/v3/documentation/midi"
           ],
         },
 
         {
           title: "Development",
-          path: "/v3/development/",
+          path: "/v3/development/setup",
         },
       ],
 
@@ -97,15 +100,19 @@ module.exports = {
 
         {
           title: "Documentation",
-          path: "/v3/documentation/shortcuts",
+          path: "/v3/documentation/userInterface",
         },
 
         {
           title: "Development",
-          path: "/v3/development/",
+          path: "/v3/development/setup",
           collapsable: false,
-          children: ["/v3/development/", "/v3/development/directives"],
-        },
+          children: [
+            "/v3/development/setup",
+            "/v3/development/platformSpecifics",
+            "/v3/development/directives"
+          ]
+        }
       ],
 
       "/v2/": [
