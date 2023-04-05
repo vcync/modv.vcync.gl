@@ -4,14 +4,6 @@ sidebarDepth: 2
 
 # Media
 
-:::warning
-Video is currently unsupported in modV 3. We're tracking this here: [https://github.com/vcync/modV/issues/521](https://github.com/vcync/modV/issues/521)
-
-If video is required, virtual webcams such as [OBS Virtual Camera](https://obsproject.com/forum/resources/obs-virtualcam.539/) are an option.
-:::
-
-
-
 ## Supported Media
 
 modV handles filesystem operations, serving and hot-reloading Modules, Plugins, Images and Videos.
@@ -75,3 +67,10 @@ For example, you can drag and drop an image into the `image` folder, or a Module
 2. Add the `Texture 2D` Module to a Group and click the Module in the Group to focus it
 3. In the Module Inspector, set the `texture` property to `image` to show a dropdown of available images
 4. Select the image you added into the `image` folder
+
+## Using a video
+
+1. Add a video into the `video` folder of a Project
+2. Add the `Texture 2D` Module to a Group and click the Module in the Group to focus it
+3. In the Module Inspector, set the `texture` property to `video` to show a dropdown of available videos
+4. Select the video you added into the `video` folder
