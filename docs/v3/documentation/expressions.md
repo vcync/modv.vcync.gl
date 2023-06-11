@@ -31,6 +31,7 @@ Other variables in the scope:
 |Variable|Type|Detail|
 |---|---|---|
 |`time`|Number|The time returned from `Date.now()`|
+|`inputValue`|Number|The current value of the input. Can be used to create a feedback loop, e.g. `value + (inputValue * 0.94)`|
 
 
 ::: tip
